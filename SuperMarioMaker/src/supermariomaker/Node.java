@@ -6,14 +6,47 @@ package supermariomaker;
  */
 public class Node {
     
-    int data;
-    Node next;
-    Node previous;
+    final int imagen;
+    final String nombre_objeto;
     
-    Node(int data){
-        this.data = data;
-        this.next = null;
-        this.previous = null;
+    Node siguiente;
+    Node anterior;
+    
+    Node(int imagen, String nombre_objeto){
+        
+        this.imagen = imagen;
+        this.nombre_objeto = nombre_objeto;
+        this.siguiente = null;
+        this.anterior = null;
+        
+    }
+
+    /**
+     * @return the imagen
+     */
+    public int getImagen() {
+        return imagen;
+    }
+
+    /**
+     * @return the nombre_objeto
+     */
+    public String getNombre_objeto() {
+        return nombre_objeto;
+    }
+
+    /**
+     * @param siguiente the siguiente to set
+     */
+    public void setSiguiente(Node siguiente) {
+        this.siguiente = siguiente;
+    }
+
+    /**
+     * @param anterior the anterior to set
+     */
+    public void setAnterior(Node anterior) {
+        this.anterior = anterior;
     }
     
 }
