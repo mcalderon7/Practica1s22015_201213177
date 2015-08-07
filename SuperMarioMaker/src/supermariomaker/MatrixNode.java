@@ -12,8 +12,8 @@ public class MatrixNode {
     
     MatrixNode siguiente;
     MatrixNode anterior;
-    private MatrixNode arriba;
-    private MatrixNode abajo;
+    MatrixNode arriba;
+    MatrixNode abajo;
     
     public MatrixNode(int indice, int imagen, String nombre_objeto){
         

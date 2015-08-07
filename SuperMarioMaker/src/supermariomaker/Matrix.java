@@ -6,22 +6,30 @@ package supermariomaker;
  */
 public class Matrix {
     
-    Node primero;
-    Node ultimo;
+    MatrixNode primero;
+    MatrixNode ultimo;
+    MatrixNode arriba;
+    MatrixNode abajo;
     
     public Matrix(){
         this.primero = null;
         this.ultimo = null;
+        this.arriba = null;
+        this.abajo = null;
     }
     
     public Matrix insertar(int indice, int imagen, String nombre_objeto){
         
-        Node nuevo = new Node(indice, imagen, nombre_objeto);
+        MatrixNode nuevo = new MatrixNode(indice, imagen, nombre_objeto);
         nuevo.siguiente = primero;
         
         if(primero == null){
             primero.anterior = nuevo;
             primero = nuevo;
+            
+            Row cabeza = new Row();
+            cabeza.insertar(1);
+            //primero.arriba = 
         }else{
             nuevo.siguiente = ultimo.siguiente;
             
@@ -40,7 +48,7 @@ public class Matrix {
     
     public void eliminar(int indice){
         
-        Node actual;
+        MatrixNode actual;
         boolean encontrado = false;
         actual = primero;
         
