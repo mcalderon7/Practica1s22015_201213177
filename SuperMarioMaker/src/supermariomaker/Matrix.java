@@ -6,37 +6,37 @@ package supermariomaker;
  */
 public class Matrix {
     
-    MatrixNode primero;
-    MatrixNode ultimo;
-    MatrixNode arriba;
-    MatrixNode abajo;
+    MatrixNode auxFil;
+    MatrixNode auxCol;
+    MatrixNode primeroColumna;
+    MatrixNode ultimoColumna;
+    MatrixNode primeroFila;
+    MatrixNode ultimoFila;
     
     public Matrix(){
-        this.primero = null;
-        this.ultimo = null;
-        this.arriba = null;
-        this.abajo = null;
+        this.primeroColumna = null;
+        this.ultimoColumna = null;
+        this.primeroFila = null;
+        this.ultimoFila = null;
+        this.auxCol = null;
+        this.auxFil = null;
     }
     
-    public Matrix insertar(int indice, int imagen, String nombre_objeto){
+    public Matrix insertarColumna(int indice){
         
-        MatrixNode nuevo = new MatrixNode(indice, imagen, nombre_objeto);
-        nuevo.siguiente = primero;
+        MatrixNode nuevo = new MatrixNode(indice);
+        nuevo.siguiente = primeroColumna;
         
-        if(primero == null){
-            primero.anterior = nuevo;
-            primero = nuevo;
-            
-            Row cabeza = new Row();
-            cabeza.insertar(1);
-            //primero.arriba = 
+        if(primeroColumna == null){
+            primeroColumna.anterior = nuevo;
+            primeroColumna = nuevo;
         }else{
-            nuevo.siguiente = ultimo.siguiente;
+            nuevo.siguiente = ultimoColumna.siguiente;
             
-            if(ultimo.siguiente != null){
-                ultimo.siguiente.anterior = nuevo;
-                ultimo.siguiente = nuevo;
-                nuevo.anterior = ultimo;
+            if(ultimoColumna.siguiente != null){
+                ultimoColumna.siguiente.anterior = nuevo;
+                ultimoColumna.siguiente = nuevo;
+                nuevo.anterior = ultimoColumna;
             }
             
         }
@@ -45,47 +45,55 @@ public class Matrix {
         
     }
     
+    public Matrix insertarFila(int indice){
+        
+        MatrixNode nuevo = new MatrixNode(indice);
+        nuevo.siguiente = primeroFila;
+        
+        if(primeroFila == null){
+            primeroFila.anterior = nuevo;
+            primeroFila = nuevo;
+        }else{
+            nuevo.siguiente = ultimoFila.siguiente;
+            
+            if(ultimoFila.siguiente != null){
+                ultimoFila.siguiente.anterior = nuevo;
+                ultimoFila.siguiente = nuevo;
+                nuevo.anterior = ultimoFila;
+            }
+            
+        }
+        
+        return this;
+        
+    }
+    
+    public Matrix insertarFilaX(int indice, int imagen, String nombre_objeto){
+        
+        /*MatrixNode nuevo = new MatrixNode(indice, imagen, nombre_objeto);
+        primeroFila.siguiente = nuevo;
+        primeroColumna.abajo = nuevo;*/
+        
+        if(primeroFila != null && primeroColumna != null){
+            
+            while(auxFil != null){
+                
+                
+                
+            }
+            
+        }
+        
+        
+        
+        return this;
+        
+    }
+    
     
     public void eliminar(int indice){
         
-        MatrixNode actual;
-        boolean encontrado = false;
-        actual = primero;
-        
-        while((actual != null) && (!encontrado)){
-            
-            encontrado = (actual.indice == indice);
-            
-            if(!encontrado){
-                actual = actual.siguiente;
-            }
-            
-        }
-        
-        if(actual != null){
-            
-            if(actual == primero){
-                primero = actual.siguiente;
-                
-                if(actual.siguiente != null){
-                    actual.siguiente.anterior = null;
-                }
-                
-            }else if(actual.siguiente != null){
-                
-                actual.anterior.siguiente = actual.siguiente;
-                actual.siguiente.anterior = actual.anterior;
-                
-            }else{
-                
-                actual.anterior.siguiente = null;
-                actual = null;
-                
-            }
-            
-        }
-        
-        
+           
     }
     
 }
