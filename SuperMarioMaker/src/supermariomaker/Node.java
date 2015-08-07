@@ -10,8 +10,8 @@ public class Node {
     Node next;
     Node previous;
     
-    Node(int value){
-        this.data = value;
+    Node(int data){
+        this.data = data;
         this.next = null;
         this.previous = null;
     }
