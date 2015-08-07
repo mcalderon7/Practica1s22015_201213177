@@ -13,7 +13,7 @@ package supermariomaker;
 public class HeaderNode {
     
     final int indice;
-    private HeaderNode siguiente;
+    HeaderNode siguiente;
     
     public HeaderNode(int indice){
         this.indice = indice;
@@ -31,14 +31,7 @@ public class HeaderNode {
     public int getIndice() {
         return indice;
     }
-
-    /**
-     * @return the siguiente
-     */
-    public HeaderNode getSiguiente() {
-        return siguiente;
-    }
-
+    
     /**
      * @param siguiente the siguiente to set
      */
@@ -46,6 +39,4 @@ public class HeaderNode {
         this.siguiente = siguiente;
     }
 
-    
-    
 }
