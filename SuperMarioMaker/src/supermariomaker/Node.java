@@ -6,14 +6,16 @@ package supermariomaker;
  */
 public class Node {
     
+    final int indice;
     final int imagen;
     final String nombre_objeto;
     
     Node siguiente;
     Node anterior;
     
-    Node(int imagen, String nombre_objeto){
+    public Node(int indice, int imagen, String nombre_objeto){
         
+        this.indice = indice;
         this.imagen = imagen;
         this.nombre_objeto = nombre_objeto;
         this.siguiente = null;
