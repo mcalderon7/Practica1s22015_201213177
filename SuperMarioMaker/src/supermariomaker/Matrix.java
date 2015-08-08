@@ -50,39 +50,16 @@ public class Matrix {
         MatrixNode nuevo = new MatrixNode(indice);
         nuevo.siguiente = primeroFila;
         
-        if(primeroFila == null){
+        if(primeroFila != null){
             primeroFila.anterior = nuevo;
             primeroFila = nuevo;
-        }else{
-            nuevo.siguiente = ultimoFila.siguiente;
-            
-            if(ultimoFila.siguiente != null){
-                ultimoFila.siguiente.anterior = nuevo;
-                ultimoFila.siguiente = nuevo;
-                nuevo.anterior = ultimoFila;
-            }
-            
         }
         
         return this;
         
     }
     
-    public Matrix insertarFilaX(int indice, int imagen, String nombre_objeto){
-        
-        /*MatrixNode nuevo = new MatrixNode(indice, imagen, nombre_objeto);
-        primeroFila.siguiente = nuevo;
-        primeroColumna.abajo = nuevo;*/
-        
-        if(primeroFila != null && primeroColumna != null){
-            
-            while(auxFil != null){
-                
-                
-                
-            }
-            
-        }
+    public Matrix insertarFilaX(int imagen, String nombre_objeto){
         
         
         
